@@ -7,39 +7,43 @@ optional `published`) and add an optional `downloads` object. See
 
 Supported keys: `macos`, `windows`, `linux-deb`, `linux-appimage`. Omit any
 unavailable key. Each entry needs an absolute `https://` installer URL.
-Labels fall back to the platform names; `size` is optional display text.
-The top-level `url` supplies the HTTPS release page for “All files and
-checksums.” On Linux the primary link prefers AppImage and falls back to
-`.deb`; other known OSes only get their own primary link. All valid
-installers are listed regardless of the visitor's OS.
+Use `label` for the system requirements and architecture, and `size` for
+optional display text. The top-level `url` supplies the HTTPS release page
+for release notes, all files and `SHA256SUMS.txt`. There is one card per
+available platform. A detected platform is recommended when it has an
+installer. Linux lists both formats together, with AppImage emphasized
+when both are available.
 
 With no usable installer, a failed request, or JavaScript disabled, the
 existing status remains unchanged. The site does not probe asset URLs:
 publish and verify the release page, checksums and all assets anonymously
 **before** publishing the root manifest. Never use fixture URLs there.
+Review the macOS and Windows install advisories in `script.js` if signing or
+notarisation changes in a later release.
 
 ## Local test
 
 From the repo root, run the following and open `http://127.0.0.1:8105/#status`.
-The dormant version should have no download links. Stop the server with
-Ctrl-C before starting the active preview.
+The download section appears if the checkout has a usable `updates.json`.
+Stop the server with Ctrl-C before trying the isolated preview.
 
 ```sh
 python3 -m http.server 8105 --bind 127.0.0.1
 ```
 
-Make an ignored copy for active preview so the source root stays dormant:
+Make an ignored copy to test both states without editing the published
+manifest. With no `updates.json` in this new directory, the page stays dormant:
 
 ```sh
 mkdir -p test/local/active
 cp index.html script.js styles.css test/local/active/
-cp -R img fonts test/local/active/
-cp test/updates.sample.json test/local/active/updates.json
+cp -R img fonts licenses test/local/active/
 python3 -m http.server 8105 --bind 127.0.0.1 --directory test/local/active
 ```
 
-Reload the same URL. Inspect the links without following the intentionally
-fake URLs. Use Chrome's user-agent override to check Windows, macOS, Linux
-and an unknown OS. Clear any conflicting UA Client Hints when testing the
-legacy UA fallback. Try a fixture with only an `http://` or `javascript:`
-entry to check that the dormant state returns. Stop the server when done.
+While serving the copy, add the fake fixture with
+`cp test/updates.sample.json test/local/active/updates.json`. Reload and
+inspect the links without following the fake URLs. Test Windows, macOS,
+Linux and an unknown OS by setting both the UA and the UA Client Hints
+platform. Try a fixture with only an `http://` or `javascript:` entry to
+check that the dormant state returns. Stop the server when done.
