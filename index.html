@@ -33,7 +33,7 @@
       <a href="#agents">Agents</a>
       <a href="#themes">Themes</a>
     </nav>
-    <a class="btn btn--ink btn--sm nav__cta" href="#status">Release status</a>
+    <a class="btn btn--ink btn--sm nav__cta" href="#status" data-download-nav>Release status</a>
     <details class="nav__menu">
       <summary>Menu</summary>
       <nav aria-label="Sections">
@@ -42,7 +42,7 @@
         <a href="#files">Plain files</a>
         <a href="#agents">Agents</a>
         <a href="#themes">Themes</a>
-        <a href="#status">Release status</a>
+        <a href="#status" data-download-nav>Release status</a>
       </nav>
     </details>
   </div>
@@ -60,7 +60,7 @@
       <p class="lede">Collect sources, link notes and sketch ideas in a keyboard-first desktop workspace. Your library is an ordinary folder of Markdown and SVG files.</p>
       <div class="actions">
         <a class="btn btn--ink" href="#workflow">See the workflow</a>
-        <a class="hero__status" href="#status">Release status</a>
+        <a class="hero__status" href="#status" data-download-nav>Release status</a>
       </div>
     </div>
 
@@ -368,7 +368,7 @@
     <header class="head reveal">
       <p class="label">Release status</p>
       <h2 id="st-h">Early, and honest about it</h2>
-      <p class="sub">Re-Hub is at version 0.2.1. Public downloads are not open yet. This is what has been built and what has been checked.</p>
+      <p class="sub" data-download-intro>Re-Hub is at version 0.2.1. Public downloads are not open yet. This is what has been built and what has been checked.</p>
     </header>
 
     <div class="status reveal">
@@ -383,8 +383,8 @@
         </tbody>
       </table>
       <ul class="notes">
-        <li><b>Downloads</b> Not public yet. There is no download link on this page on purpose.</li>
-        <li><b>macOS builds</b> Not notarised.</li>
+        <li data-download-dormant><b>Downloads</b> Not public yet. There is no download link on this page on purpose.</li>
+        <li data-download-dormant><b>macOS builds</b> Not notarised.</li>
         <li><b>Licence</b> Not chosen yet.</li>
         <li><b>Not planned</b> Accounts, cloud sync, collaboration, a database, a plugin system.</li>
       </ul>

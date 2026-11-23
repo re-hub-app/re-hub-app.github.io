@@ -275,6 +275,28 @@ html:not(.js) .panel + .panel { border-top: 1px solid var(--line); }
 .theme h3 { margin-top: 16px; }
 
 /* status */
+.downloads {
+  margin-bottom: 24px;
+  padding: clamp(20px, 4vw, 40px);
+  border: 1px solid var(--line);
+  background: var(--white);
+  overflow-wrap: anywhere;
+}
+.downloads h3 { font-size: clamp(1.375rem, 3vw, 1.75rem); }
+.downloads__date { margin-top: 4px; color: var(--ink-3); }
+.downloads__date, .downloads__size { font-size: .875rem; }
+.downloads__primary { margin-top: 20px; }
+.downloads .btn { max-width: 100%; flex-wrap: wrap; gap: .15rem .6rem; padding-block: 10px; }
+.downloads__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.downloads__list .btn { width: 100%; height: 100%; justify-content: space-between; }
+.downloads__size { color: inherit; font-weight: 400; }
+.downloads__release { display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; text-underline-offset: .2em; }
+
 .status { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 8px; }
 .status table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--line); font-size: .9375rem; }
 .status th, .status td { text-align: left; vertical-align: top; padding: 18px 24px; border-bottom: 1px solid var(--line); }

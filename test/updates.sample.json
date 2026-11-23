@@ -1,0 +1,25 @@
+{
+  "version": "0.2.2",
+  "notes": "Local preview fixture; the asset URLs below are intentionally fake.",
+  "url": "https://example.invalid/releases/tag/v0.2.2",
+  "published": "2026-12-01",
+  "downloads": {
+    "macos": {
+      "url": "https://example.invalid/Re-Hub-0.2.2-macos-universal.dmg",
+      "label": "macOS (Apple silicon and Intel)",
+      "size": "18 MB"
+    },
+    "windows": {
+      "url": "https://example.invalid/Re-Hub-0.2.2-windows-x86_64-setup.exe",
+      "label": "Windows 10 and 11 (x86-64)"
+    },
+    "linux-deb": {
+      "url": "https://example.invalid/re-hub_0.2.2_amd64.deb",
+      "label": "Debian / Ubuntu (.deb, amd64)"
+    },
+    "linux-appimage": {
+      "url": "https://example.invalid/Re-Hub-0.2.2-x86_64.AppImage",
+      "label": "Linux AppImage (x86-64)"
+    }
+  }
+}

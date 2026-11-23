@@ -62,3 +62,129 @@ if (phoneMenu) {
     });
   });
 }
+
+// Keep the static release status until the manifest contains a usable installer.
+(async function () {
+  'use strict';
+
+  var status = document.getElementById('status');
+  if (!status || !window.fetch || !window.AbortController) return;
+
+  function httpsUrl(value) {
+    if (typeof value !== 'string' || !value.startsWith('https://') ||
+        /[\\\s\u0000-\u001f\u007f]/.test(value)) return null;
+    try {
+      var url = new URL(value);
+      return url.protocol === 'https:' && url.hostname && !url.username && !url.password
+        ? url.href : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function text(value) {
+    return typeof value === 'string' ? value.trim() : '';
+  }
+
+  function platform() {
+    var hint = text(navigator.userAgentData?.platform);
+    var value = hint || navigator.userAgent;
+    if (/android|iphone|ipad|ipod|cros/i.test(value)) return '';
+    if (/windows/i.test(value)) return 'windows';
+    if (/macos|macintosh|mac os/i.test(value)) return 'macos';
+    if (/linux/i.test(value)) return 'linux';
+    return '';
+  }
+
+  function element(tag, content, className) {
+    var node = document.createElement(tag);
+    if (content) node.textContent = content;
+    if (className) node.className = className;
+    return node;
+  }
+
+  function link(label, url, className) {
+    var node = element('a', label, className);
+    node.setAttribute('href', url);
+    return node;
+  }
+
+  var manifest;
+  var controller = new AbortController();
+  var timeout = setTimeout(function () { controller.abort(); }, 5000);
+  try {
+    var response = await fetch('/updates.json', { cache: 'no-store', signal: controller.signal });
+    if (!response.ok) return;
+    manifest = await response.json();
+  } catch (_) {
+    return;
+  } finally {
+    clearTimeout(timeout);
+  }
+
+  var version = text(manifest?.version);
+  var downloads = manifest?.downloads;
+  if (!version || !downloads || typeof downloads !== 'object' || Array.isArray(downloads)) return;
+
+  var labels = {
+    macos: 'macOS (Apple silicon and Intel)',
+    windows: 'Windows 10 and 11 (x86-64)',
+    'linux-deb': 'Debian / Ubuntu (.deb, amd64)',
+    'linux-appimage': 'Linux AppImage (x86-64)'
+  };
+  var installers = Object.keys(labels).flatMap(function (key) {
+    var asset = downloads[key];
+    var url = httpsUrl(asset?.url);
+    if (!url) return [];
+    return [{ key: key, url: url, label: text(asset.label) || labels[key], size: text(asset.size) }];
+  });
+  if (!installers.length) return;
+
+  var block = element('section', '', 'downloads');
+  block.setAttribute('aria-labelledby', 'downloads-title');
+  var heading = element('h3', 'Download Re-Hub ' + version);
+  heading.id = 'downloads-title';
+  block.append(heading);
+  var published = text(manifest.published);
+  if (published) block.append(element('p', 'Published ' + published, 'downloads__date'));
+
+  var os = platform();
+  // Prefer AppImage unless .deb is the only Linux package on offer.
+  var preferred = installers.find(function (asset) {
+    return asset.key === (os === 'linux' ? 'linux-appimage' : os);
+  });
+  if (os === 'linux' && !preferred) {
+    preferred = installers.find(function (asset) { return asset.key === 'linux-deb'; });
+  }
+
+  function downloadLink(asset, className) {
+    var anchor = link('Download ' + asset.label, asset.url, className);
+    if (asset.size) anchor.append(element('small', ' ' + asset.size, 'downloads__size'));
+    return anchor;
+  }
+
+  if (preferred) block.append(downloadLink(preferred, 'btn btn--ink downloads__primary'));
+
+  var list = element('ul', '', 'downloads__list');
+  list.setAttribute('role', 'list');
+  list.setAttribute('aria-label', 'All available installers');
+  installers.forEach(function (asset) {
+    var row = element('li');
+    row.append(downloadLink(asset, 'btn btn--ghost'));
+    list.append(row);
+  });
+  block.append(list);
+
+  var releaseUrl = httpsUrl(manifest.url);
+  if (releaseUrl) block.append(link('All files and checksums', releaseUrl, 'downloads__release'));
+
+  status.querySelector('.status').before(block);
+  status.querySelector('[data-download-intro]').textContent =
+    'The table below describes platform testing for Re-Hub 0.2.1.';
+  status.querySelectorAll('[data-download-dormant]').forEach(function (note) {
+    note.remove();
+  });
+  document.querySelectorAll('[data-download-nav]').forEach(function (anchor) {
+    anchor.textContent = 'Download';
+  });
+})();
