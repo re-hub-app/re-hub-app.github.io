@@ -178,6 +178,16 @@ if (phoneMenu) {
   var releaseUrl = httpsUrl(manifest.url);
   if (releaseUrl) block.append(link('All files and checksums', releaseUrl, 'downloads__release'));
 
+  // Keep the platform warnings next to the buttons: they matter most when people can download.
+  var warnings = element('ul', '', 'downloads__notes');
+  if (installers.some(function (asset) { return asset.key === 'macos'; })) {
+    warnings.append(element('li', 'macOS: the app is not notarised yet. On first launch, right-click Re-Hub and choose Open.'));
+  }
+  if (installers.some(function (asset) { return asset.key === 'windows'; })) {
+    warnings.append(element('li', 'Windows: the installer is not signed yet, so SmartScreen may warn before it runs.'));
+  }
+  if (warnings.childElementCount) block.append(warnings);
+
   status.querySelector('.status').before(block);
   status.querySelector('[data-download-intro]').textContent =
     'The table below describes platform testing for Re-Hub 0.2.1.';

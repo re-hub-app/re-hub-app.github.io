@@ -416,3 +416,4 @@ html:not(.js) .panel + .panel { border-top: 1px solid var(--line); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+.downloads__notes { margin: 1rem 0 0; padding-left: 1.1rem; color: var(--ink-3); font-size: .875rem; line-height: 1.5; }
