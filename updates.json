@@ -1,0 +1,28 @@
+{
+  "version": "0.2.2",
+  "notes": "Re-Hub 0.2.2 (test build)\n\n- Update notifications: the app checks this file once a day and shows an Update button when a newer version exists. It only opens the release page.\n- The researchhub command line no longer opens the app window when a flag comes before the command.\n- Font licence texts for Inter, Lora and Cascadia Mono now ship with every installer.\n\nmacOS: not notarised yet, so right-click Re-Hub and choose Open on first launch. Windows: the installer is not signed yet, so SmartScreen may warn.",
+  "url": "https://github.com/re-hub-app/re-hub-app.github.io/releases/tag/v0.2.2",
+  "published": "2026-11-23",
+  "downloads": {
+    "macos": {
+      "url": "https://github.com/re-hub-app/re-hub-app.github.io/releases/download/v0.2.2/Re-Hub-0.2.2-macos-universal.dmg",
+      "label": "macOS 11+ (Apple silicon and Intel)",
+      "size": "13.9 MB"
+    },
+    "windows": {
+      "url": "https://github.com/re-hub-app/re-hub-app.github.io/releases/download/v0.2.2/Re-Hub-0.2.2-windows-x86_64-setup.exe",
+      "label": "Windows 10 and 11 (x86-64)",
+      "size": "12.0 MB"
+    },
+    "linux-deb": {
+      "url": "https://github.com/re-hub-app/re-hub-app.github.io/releases/download/v0.2.2/re-hub_0.2.2_amd64.deb",
+      "label": "Debian / Ubuntu (.deb, amd64)",
+      "size": "6.9 MB"
+    },
+    "linux-appimage": {
+      "url": "https://github.com/re-hub-app/re-hub-app.github.io/releases/download/v0.2.2/Re-Hub-0.2.2-x86_64.AppImage",
+      "label": "Linux AppImage (x86-64)",
+      "size": "8.9 MB"
+    }
+  }
+}
