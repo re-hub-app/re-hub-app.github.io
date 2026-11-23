@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16 12 496.2 65" width="496.2" height="65" data-rh="flowchart">
+<metadata id="rh-mermaid">flowchart LR
+A[Source] --&gt; B(Linked note)
+B --&gt; C[Thread export]</metadata>
+<g font-family="Inter, sans-serif" font-size="18" text-anchor="middle" stroke-linecap="round" stroke-linejoin="round">
+<path d="M107.8 44.5 L163.8 44.5" fill="none" stroke="#8b8378" stroke-width="1.5"/>
+<path d="M171.8 44.5 L162.8 40.5 L162.8 48.5 Z" fill="#8b8378" stroke="none"/>
+<path d="M297.6 44.5 L353.6 44.5" fill="none" stroke="#8b8378" stroke-width="1.5"/>
+<path d="M361.6 44.5 L352.6 40.5 L352.6 48.5 Z" fill="#8b8378" stroke="none"/>
+<rect x="24" y="24" width="83.8" height="41" rx="4" fill="#fffdf8" stroke="#2f2b26" stroke-width="1.6"/>
+<text x="65.9" y="50.5" fill="#2f2b26">Source</text>
+<rect x="171.8" y="24" width="125.8" height="41" rx="10" fill="#fffdf8" stroke="#2f2b26" stroke-width="1.6"/>
+<text x="234.7" y="50.5" fill="#2f2b26">Linked note</text>
+<rect x="361.6" y="24" width="142.6" height="41" rx="4" fill="#fffdf8" stroke="#2f2b26" stroke-width="1.6"/>
+<text x="432.9" y="50.5" fill="#2f2b26">Thread export</text>
+</g>
+</svg>

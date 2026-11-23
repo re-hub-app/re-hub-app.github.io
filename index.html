@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Re-Hub — a research library that stays in your folder</title>
+<meta name="description" content="Re-Hub is a keyboard-first desktop app for research notes, sources, saved chats and sketches. Every item is a plain Markdown or SVG file in a folder you own.">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://re-hub-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Re-Hub: research that stays in your folder">
+<meta property="og:description" content="A keyboard-first desktop app for research notes, sources, saved chats and sketches. Every item is a plain Markdown or SVG file in a folder you own.">
+<meta property="og:url" content="https://re-hub-app.github.io/">
+<meta property="og:image" content="https://re-hub-app.github.io/img/web/reader-paper.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/Inter.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Re-Hub, back to top">
+      <img src="img/icon-128.png" width="30" height="30" alt="">
+      <span>Re-Hub</span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#workflow">Workflow</a>
+      <a href="#features">Features</a>
+      <a href="#files">Plain files</a>
+      <a href="#agents">Agents</a>
+      <a href="#themes">Themes</a>
+    </nav>
+    <a class="btn btn--ink btn--sm nav__cta" href="#status">Release status</a>
+    <details class="nav__menu">
+      <summary>Menu</summary>
+      <nav aria-label="Sections">
+        <a href="#workflow">Workflow</a>
+        <a href="#features">Features</a>
+        <a href="#files">Plain files</a>
+        <a href="#agents">Agents</a>
+        <a href="#themes">Themes</a>
+        <a href="#status">Release status</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- HERO -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__field" aria-hidden="true"></div>
+  <div class="hero__in wrap">
+    <div class="hero__block">
+      <p class="label">Desktop app / v0.2.1</p>
+      <h1 id="hero-title">Research that stays <span class="serif">in your folder.</span></h1>
+      <p class="lede">Collect sources, link notes and sketch ideas in a keyboard-first desktop workspace. Your library is an ordinary folder of Markdown and SVG files.</p>
+      <div class="actions">
+        <a class="btn btn--ink" href="#workflow">See the workflow</a>
+        <a class="hero__status" href="#status">Release status</a>
+      </div>
+    </div>
+
+    <div class="hero__artefacts">
+      <figure class="hero__sketch">
+        <figcaption><strong>The research loop</strong><span>Drawn by Re-Hub&rsquo;s flowchart engine. <a href="img/hero-research-loop.svg">Open the SVG</a></span></figcaption>
+        <svg class="hero__drawing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 505 367" width="505" height="367" data-rh="flowchart" role="img" aria-labelledby="loop-title" aria-describedby="loop-desc">
+<title id="loop-title">The research loop</title>
+<desc id="loop-desc">Ask a question, collect sources and write a note. From the note, sketch the idea or read the linked thread; both lead to a sharper question.</desc>
+<metadata id="rh-mermaid">flowchart TD
+  Q([Ask a question]) --&gt; S[Collect sources]
+  S --&gt; N(Write a note)
+  N --&gt; K[Sketch the idea]
+  N --&gt; T[Read the thread]
+  K -. sharper question .-&gt; Q
+  T -. sharper question .-&gt; Q</metadata>
+<g font-family="Inter, sans-serif" text-anchor="middle" stroke-linecap="round" stroke-linejoin="round">
+<path d="M252.5 64 L252.5 108" class="loop-ink" pathLength="1" fill="none" stroke="#a13716" stroke-width="2.2"/>
+<path d="M252.5 116 L256.6 107 L248.5 107 Z" class="loop-tip" fill="#a13716" stroke="none"/>
+<path d="M252.5 157 L252.5 201" class="loop-ink" pathLength="1" fill="none" stroke="#a13716" stroke-width="2.2"/>
+<path d="M252.5 209 L256.6 200 L248.5 200 Z" class="loop-tip" fill="#a13716" stroke="none"/>
+<path d="M231 250 L182.1 296.5" class="loop-ink" pathLength="1" fill="none" stroke="#a13716" stroke-width="2.2"/>
+<path d="M176.3 302 L185.6 298.7 L180.1 292.9 Z" class="loop-tip" fill="#a13716" stroke="none"/>
+<path d="M274 250 L322.9 296.5" class="loop-ink" pathLength="1" fill="none" stroke="#a13716" stroke-width="2.2"/>
+<path d="M328.7 302 L324.9 292.9 L319.4 298.7 Z" class="loop-tip" fill="#a13716" stroke="none"/>
+<path d="M147.4 302 L145.9 297.8 L143.9 292.5 L141.7 286.2 L139.2 279.2 L136.4 271.6 L133.5 263.5 L130.4 255 L127.3 246.5 L124.2 237.9 L121.2 229.5 L117.4 220.9 L112.3 211.9 L106.5 202.5 L100.5 192.8 L94.7 183 L89.7 173.2 L85.9 163.5 L84 154.1 L84.4 145.1 L87.6 136.5 L94.5 128.1 L105.1 119.5 L118.5 111 L133.8 102.5 L150.1 94.4 L166.6 86.8 L182.4 79.8 L196.7 73.5 L208.4 68.2 L209.7 67.6" fill="none" class="loop-back" stroke="#a13716" stroke-width="1.8" stroke-dasharray="5 4"/>
+<path d="M216.8 64 L207 64.4 L210.6 71.7 Z" class="loop-tip" fill="#a13716" stroke="none"/>
+<path d="M357.6 302 L359.1 297.8 L361.1 292.5 L363.3 286.2 L365.8 279.2 L368.6 271.6 L371.5 263.5 L374.6 255 L377.7 246.5 L380.8 237.9 L383.8 229.5 L387.6 220.9 L392.7 211.9 L398.5 202.5 L404.5 192.8 L410.3 183 L415.3 173.2 L419.1 163.5 L421 154.1 L420.6 145.1 L417.4 136.5 L410.5 128.1 L399.9 119.5 L386.5 111 L371.2 102.5 L354.9 94.4 L338.4 86.8 L322.6 79.8 L308.3 73.5 L296.6 68.2 L295.3 67.6" fill="none" class="loop-back" stroke="#a13716" stroke-width="1.8" stroke-dasharray="5 4"/>
+<path d="M288.2 64 L294.4 71.7 L298 64.4 Z" class="loop-tip" fill="#a13716" stroke="none"/>
+<rect x="24" y="125.5" width="127.2" height="22" rx="3" fill="#fffdf8"/>
+<text x="87.6" y="140.7" font-size="12.5" fill="#a13716">sharper question</text>
+<rect x="353.8" y="125.5" width="127.2" height="22" rx="3" fill="#fffdf8"/>
+<text x="417.4" y="140.7" font-size="12.5" fill="#a13716">sharper question</text>
+<rect x="171" y="24" width="163" height="40" rx="20" fill="#fffdf8" stroke="#23473d" stroke-width="2"/>
+<text x="252.5" y="48.9" font-size="15" font-weight="550" fill="#23473d">Ask a question</text>
+<rect x="172.8" y="116" width="159.4" height="41" rx="4" fill="#fffdf8" stroke="#23473d" stroke-width="2"/>
+<text x="252.5" y="141.4" font-size="15" font-weight="550" fill="#23473d">Collect sources</text>
+<rect x="184" y="209" width="137" height="41" rx="10" fill="#fffdf8" stroke="#23473d" stroke-width="2"/>
+<text x="252.5" y="234.4" font-size="15" font-weight="550" fill="#23473d">Write a note</text>
+<rect x="75.1" y="302" width="159.4" height="41" rx="4" fill="#fffdf8" stroke="#23473d" stroke-width="2"/>
+<text x="154.8" y="327.4" font-size="15" font-weight="550" fill="#23473d">Sketch the idea</text>
+<rect x="270.5" y="302" width="159.4" height="41" rx="4" fill="#fffdf8" stroke="#23473d" stroke-width="2"/>
+<text x="350.2" y="327.4" font-size="15" font-weight="550" fill="#23473d">Read the thread</text>
+</g>
+</svg>
+      </figure>
+      <ul class="hero__cards" aria-label="What Re-Hub does">
+        <li class="hcard">
+          <h2>Collect</h2>
+          <ul><li>Sources and notes</li><li>Saved chats and sketches</li></ul>
+        </li>
+        <li class="hcard">
+          <h2>Connect</h2>
+          <ul><li>Wiki-links and backlinks</li><li>Investigation threads</li></ul>
+        </li>
+        <li class="hcard">
+          <h2>Hand off</h2>
+          <ul><li>Markdown thread export</li><li>CLI and MCP access</li></ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SHORTCUT STRIP -->
+<section class="strip" aria-labelledby="strip-h">
+  <div class="wrap">
+    <p class="label label--center" id="strip-h">Shortcuts from the app · Cmd on macOS, Ctrl on Windows and Linux</p>
+    <ul class="shortcuts">
+      <li><kbd>Cmd/Ctrl</kbd><kbd>K</kbd> Command palette</li>
+      <li><kbd>Cmd/Ctrl</kbd><kbd>N</kbd> New note</li>
+      <li><kbd>Cmd/Ctrl</kbd><kbd>D</kbd> New sketch</li>
+      <li><kbd>/</kbd> Focus search</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="section" id="workflow" aria-labelledby="wf-h">
+  <div class="wrap">
+    <div class="stage reveal">
+      <div class="stage__text">
+        <p class="label">Workflow</p>
+        <h2 id="wf-h">From a loose source to a finished argument, in one window</h2>
+        <div class="steps" role="tablist" aria-label="Workflow steps" aria-orientation="vertical">
+          <button class="step" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">
+            <span class="step__n">01</span>
+            <span class="step__t"><b>Collect</b> everything in one library</span>
+            <span class="step__d">Notes, saved chats, sources and sketches share one list with full-text search, type filters, sorting and pinning. Drag files onto the window to import them.</span>
+          </button>
+          <button class="step" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">
+            <span class="step__n">02</span>
+            <span class="step__t"><b>Read</b> with links and an outline</span>
+            <span class="step__d">Rendered Markdown with a document outline, backlinks and a focus mode. The investigation thread view shows an item and everything it links to as one document.</span>
+          </button>
+          <button class="step" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">
+            <span class="step__n">03</span>
+            <span class="step__t"><b>Write</b> beside a live preview</span>
+            <span class="step__d">A Markdown editor with a split preview and formatting shortcuts. Drafts autosave, and the app guards against losing unsaved changes.</span>
+          </button>
+          <button class="step" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">
+            <span class="step__n">04</span>
+            <span class="step__t"><b>Sketch</b> the idea, keep it as SVG</span>
+            <span class="step__d">Pen, shapes, arrows and text with undo, pan and zoom. Type a small subset of Mermaid flowchart syntax and get a diagram.</span>
+          </button>
+        </div>
+      </div>
+      <div class="stage__view">
+        <div class="window">
+          <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span id="window-title">Library</span></div>
+          <div class="panels">
+            <figure class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" data-title="Library">
+              <img src="img/web/library-paper.jpg" width="1680" height="1050" alt="Re-Hub library view in the Paper theme: a searchable list of notes, chats, sketches and sources with type filters in the sidebar.">
+            </figure>
+            <figure class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" data-title="Reader">
+              <img src="img/web/reader-paper.jpg" width="1680" height="1050" loading="lazy" alt="Re-Hub reader view in the Paper theme: a rendered Markdown note with a document outline beside it.">
+            </figure>
+            <figure class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" data-title="Editor">
+              <img src="img/web/editor-paper.jpg" width="1680" height="1050" loading="lazy" alt="Re-Hub editor in the Paper theme: Markdown source on the left and a live preview on the right.">
+            </figure>
+            <figure class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" data-title="Sketch studio">
+              <img src="img/web/studio-paper.jpg" width="1680" height="1050" loading="lazy" alt="Re-Hub sketch studio in the Paper theme: a drawing canvas with pen, shape, arrow and text tools.">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section section--wash" id="features" aria-labelledby="ft-h">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="label">Features</p>
+      <h2 id="ft-h">Built for the long middle of a research project</h2>
+      <p class="sub">Small, specific tools for finding what you saved, reading it closely and writing it up. Nothing here needs an account or a server.</p>
+    </header>
+
+    <ul class="cards">
+      <li class="card reveal">
+        <p class="chips"><span class="chip chip--solid">Find</span><span class="chip">Keyboard</span></p>
+        <h3>Command palette</h3>
+        <p>Fuzzy search over items and commands. Type <code>&gt;</code> for commands or <code>#</code> for tags.</p>
+        <p class="card__foot"><kbd>Cmd/Ctrl</kbd><kbd>K</kbd></p>
+      </li>
+      <li class="card reveal">
+        <p class="chips"><span class="chip chip--solid">Find</span></p>
+        <h3>Search with operators</h3>
+        <p>Words, <code>"exact phrases"</code>, <code>#tag</code>, <code>type:source</code> and <code>is:pinned</code>, across titles, text and tags.</p>
+        <p class="card__foot"><kbd>/</kbd> focuses search</p>
+      </li>
+      <li class="card reveal">
+        <p class="chips"><span class="chip chip--solid">Read</span><span class="chip">Links</span></p>
+        <h3>Wiki-links and backlinks</h3>
+        <p>Link items with <code>[[Title]]</code>. Each page lists what links back to it, so a claim leads to its source.</p>
+        <p class="card__foot">Resolves by title, then filename</p>
+      </li>
+      <li class="card reveal">
+        <p class="chips"><span class="chip chip--solid">Read</span><span class="chip">Export</span></p>
+        <h3>Investigation threads</h3>
+        <p>Open any item with everything it links to as one readable document, then export that thread as Markdown.</p>
+        <p class="card__foot">Saved to <code>exports/</code></p>
+      </li>
+      <li class="card reveal">
+        <p class="chips"><span class="chip chip--solid">Track</span></p>
+        <h3>Open questions</h3>
+        <p>A library filter that lists every item with unfinished task-list entries, so loose ends stay visible.</p>
+        <p class="card__foot">Sidebar filter with a count</p>
+      </li>
+      <li class="card reveal">
+        <p class="chips"><span class="chip chip--solid">Cite</span><span class="chip">Sources</span></p>
+        <h3>Sources keep references</h3>
+        <p>A source item stores its URL and key points. Notes, chats and sources share one format.</p>
+        <p class="card__foot">Frontmatter field <code>sources</code></p>
+      </li>
+    </ul>
+
+    <figure class="shot reveal">
+      <img src="img/web/palette-paper.jpg" width="1680" height="1050" loading="lazy" alt="Re-Hub command palette open over the home view in the Paper theme, listing commands with their keyboard shortcuts.">
+      <figcaption>The command palette over the home view. Rendered by the app itself.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- FILES -->
+<section class="section" id="files" aria-labelledby="fl-h">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="label">Plain files</p>
+      <h2 id="fl-h">A library is just a folder</h2>
+      <p class="sub">No database and no proprietary format. Files stay readable without the app, in any editor, sync tool or version control system you already use.</p>
+    </header>
+
+    <div class="slab reveal">
+      <div class="slab__side">
+        <h3>Your folder</h3>
+        <p>The default is <code>Documents/ResearchHub</code>. Point the app at any other folder.</p>
+<pre class="tree" aria-label="Library folder layout"><code>ResearchHub/
+├── notes/      *.md
+├── chats/      *.md
+├── sources/    *.md
+├── diagrams/   *.svg
+├── exports/    *.md
+└── .trash/</code></pre>
+      </div>
+      <div class="slab__grid">
+        <div class="slab__wide">
+          <h3>What the app promises about your files</h3>
+          <p>The same rules apply in the desktop app, the CLI and the MCP server.</p>
+        </div>
+        <div><h4>Atomic writes</h4><p>Each save writes a temporary file, then renames it.</p></div>
+        <div><h4>Unknown fields kept</h4><p>Frontmatter keys the app does not know are preserved on edit.</p></div>
+        <div><h4>Live reload</h4><p>Change a file in another editor and the library picks it up.</p></div>
+        <div><h4>Trash, not delete</h4><p>Deleting moves an item to <code>.trash</code> inside the library.</p></div>
+        <div><h4>Readable frontmatter</h4><p>One <code>key: value</code> per line: title, date, type, tags.</p></div>
+        <div><h4>Nothing in between</h4><p>No account, no server, no browser engine, no database.</p></div>
+      </div>
+      <p class="slab__foot"><b>Works with</b><span>any text editor</span><span>your sync tool</span><span>Git or other version control</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- AGENTS -->
+<section class="section section--wash" id="agents" aria-labelledby="ag-h">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="label">Agent interface</p>
+      <h2 id="ag-h">Three ways in, one folder</h2>
+      <p class="sub">The binary that opens the window also runs headless. Items written by the CLI or the MCP server are indistinguishable from items made in the app.</p>
+    </header>
+
+    <div class="doors reveal">
+      <ol class="bands">
+        <li class="band band--1">
+          <span class="band__dot" aria-hidden="true"></span>
+          <div><h3>Desktop app</h3><p>Native Rust with egui. Run it with no arguments.</p></div>
+        </li>
+        <li class="band band--2">
+          <span class="band__dot" aria-hidden="true"></span>
+          <div><h3>Command line</h3><p>Search, read, create, update, pin, trash, restore and export. Add <code>--json</code> for scripts.</p></div>
+        </li>
+        <li class="band band--3">
+          <span class="band__dot" aria-hidden="true"></span>
+          <div><h3>MCP server</h3><p><code>researchhub mcp</code> exposes the data layer to coding agents over stdio.</p></div>
+        </li>
+      </ol>
+
+      <div class="term" role="group" aria-label="Example terminal session">
+        <div class="term__bar" aria-hidden="true"><i></i><i></i><i></i><span>researchhub — CLI</span></div>
+<pre tabindex="0"><code><span class="c"># search the library</span>
+<span class="p">$</span> researchhub search "open access" type:source --json
+
+<span class="c"># save a source with its URL</span>
+<span class="p">$</span> researchhub create --type source --title "Survey notes" \
+    --url https://example.org/paper --tags method,survey
+
+<span class="c"># one item plus everything it links to</span>
+<span class="p">$</span> researchhub export notes/2026-01-01-topic.md
+
+<span class="c"># give a coding agent the same library</span>
+<span class="p">$</span> researchhub mcp</code></pre>
+        <ul class="tools" aria-label="MCP tools">
+          <li>rh_search</li><li>rh_list</li><li>rh_read</li><li>rh_create</li><li>rh_update</li><li>rh_pin</li><li>rh_trash</li><li>rh_restore</li><li>rh_export</li><li>rh_refresh</li><li>rh_stats</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEMES -->
+<section class="section" id="themes" aria-labelledby="th-h">
+  <div class="wrap">
+    <header class="head head--row reveal">
+      <div>
+        <p class="label">Themes</p>
+        <h2 id="th-h">Four themes, one design system</h2>
+      </div>
+      <p class="sub">Paper is light. Ink and Dusk are dark. Terminal is near-black, monospaced and square. Interface zoom is on <kbd>Cmd/Ctrl</kbd><kbd>=</kbd> and <kbd>-</kbd>.</p>
+    </header>
+    <ul class="themes">
+      <li class="theme reveal">
+        <img src="img/web/home-paper.jpg" width="1680" height="1050" loading="lazy" alt="Re-Hub home view in the Paper theme: warm light background with recent items, pinned items and top tags.">
+        <h3>Paper</h3><p>Light, warm, serif headings.</p>
+      </li>
+      <li class="theme reveal">
+        <img src="img/web/editor-ink.jpg" width="1680" height="1050" loading="lazy" alt="Re-Hub editor in the Ink theme: dark background with Markdown source and live preview side by side.">
+        <h3>Ink</h3><p>Dark. Shown here in the editor.</p>
+      </li>
+      <li class="theme reveal">
+        <img src="img/web/reader-dusk.jpg" width="1680" height="1050" loading="lazy" alt="Re-Hub reader in the Dusk theme: a rendered note on a soft dark background with an outline.">
+        <h3>Dusk</h3><p>Dark. Shown here in the reader.</p>
+      </li>
+      <li class="theme reveal">
+        <img src="img/web/palette-terminal.jpg" width="1680" height="1050" loading="lazy" alt="Re-Hub command palette in the Terminal theme: near-black, monospaced, square corners, orange accent.">
+        <h3>Terminal</h3><p>Near-black, monospaced, square.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- STATUS -->
+<section class="section section--wash" id="status" aria-labelledby="st-h">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="label">Release status</p>
+      <h2 id="st-h">Early, and honest about it</h2>
+      <p class="sub">Re-Hub is at version 0.2.1. Public downloads are not open yet. This is what has been built and what has been checked.</p>
+    </header>
+
+    <div class="status reveal">
+      <table>
+        <caption class="vh">Platform status for Re-Hub 0.2.1</caption>
+        <thead><tr><th scope="col">Platform</th><th scope="col">State</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">macOS 11+, Apple silicon</th><td><span class="pill pill--ok">Daily use</span> Developed and tested here.</td></tr>
+          <tr><th scope="row">macOS, Intel</th><td><span class="pill">Built</span> Part of the universal build. Not tested on real Intel hardware.</td></tr>
+          <tr><th scope="row">Windows 10/11</th><td><span class="pill">CI only</span> Installer built and smoke-tested in CI. Not yet used day-to-day on a real desktop.</td></tr>
+          <tr><th scope="row">Linux, X11 and Wayland</th><td><span class="pill">CI only</span> <code>.deb</code> and AppImage built and smoke-tested in CI. Not yet used day-to-day on a real desktop.</td></tr>
+        </tbody>
+      </table>
+      <ul class="notes">
+        <li><b>Downloads</b> Not public yet. There is no download link on this page on purpose.</li>
+        <li><b>macOS builds</b> Not notarised.</li>
+        <li><b>Licence</b> Not chosen yet.</li>
+        <li><b>Not planned</b> Accounts, cloud sync, collaboration, a database, a plugin system.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing" aria-labelledby="cl-h">
+  <div class="wrap">
+    <div class="closing__in reveal">
+      <div>
+        <h2 id="cl-h">Keep the thinking. <span class="serif">Keep the files.</span></h2>
+        <p>Read a note with its linked sources, then export the investigation thread as Markdown. Keep the sketch alongside it as SVG.</p>
+        <div class="actions">
+          <a class="btn btn--paper" href="#workflow">See the workflow</a>
+          <a class="btn btn--line" href="#status">Release status <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <figure class="closing__art">
+        <img src="img/reading-loop.svg" width="496" height="65" loading="lazy"
+             alt="A flowchart from Source to Linked note to Thread export.">
+        <figcaption><span>Generated in Re-Hub</span><a href="img/reading-loop.svg">Open the SVG sketch</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div class="foot__brand">
+      <a class="brand" href="#top" aria-label="Re-Hub, back to top"><img src="img/icon-128.png" width="30" height="30" alt=""><span>Re-Hub</span></a>
+      <p>A keyboard-first desktop workspace for research. Plain Markdown and SVG files in a folder you own.</p>
+    </div>
+    <nav aria-label="Product">
+      <h2>Product</h2>
+      <a href="#workflow">Workflow</a><a href="#features">Features</a><a href="#themes">Themes</a>
+    </nav>
+    <nav aria-label="Data">
+      <h2>Data</h2>
+      <a href="#files">Plain files</a><a href="#agents">CLI</a><a href="#agents">MCP server</a>
+    </nav>
+    <nav aria-label="Project">
+      <h2>Project</h2>
+      <a href="#status">Release status</a><a href="#status">Platforms</a><a href="#top">Back to top</a>
+    </nav>
+  </div>
+  <div class="wrap foot__base">
+    <p>Re-Hub 0.2.1. The CLI and agent interface are named <code>researchhub</code>.</p>
+    <p>Fonts: Inter and Lora, under the SIL Open Font License 1.1 (<a href="fonts/OFL-Inter.txt">Inter licence</a>, <a href="fonts/OFL-Lora.txt">Lora licence</a>).</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

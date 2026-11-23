@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 505 367" width="505" height="367" data-rh="flowchart">
+<metadata id="rh-mermaid">flowchart TD
+  Q([Ask a question]) --&gt; S[Collect sources]
+  S --&gt; N(Write a note)
+  N --&gt; K[Sketch the idea]
+  N --&gt; T[Read the thread]
+  K -. sharper question .-&gt; Q
+  T -. sharper question .-&gt; Q</metadata>
+<g font-family="Inter, sans-serif" text-anchor="middle" stroke-linecap="round" stroke-linejoin="round">
+<path d="M252.5 64 L252.5 108" fill="none" stroke="#8b8378" stroke-width="1.5"/>
+<path d="M252.5 116 L256.6 107 L248.5 107 Z" fill="#8b8378" stroke="none"/>
+<path d="M252.5 157 L252.5 201" fill="none" stroke="#8b8378" stroke-width="1.5"/>
+<path d="M252.5 209 L256.6 200 L248.5 200 Z" fill="#8b8378" stroke="none"/>
+<path d="M231 250 L182.1 296.5" fill="none" stroke="#8b8378" stroke-width="1.5"/>
+<path d="M176.3 302 L185.6 298.7 L180.1 292.9 Z" fill="#8b8378" stroke="none"/>
+<path d="M274 250 L322.9 296.5" fill="none" stroke="#8b8378" stroke-width="1.5"/>
+<path d="M328.7 302 L324.9 292.9 L319.4 298.7 Z" fill="#8b8378" stroke="none"/>
+<path d="M147.4 302 L145.9 297.8 L143.9 292.5 L141.7 286.2 L139.2 279.2 L136.4 271.6 L133.5 263.5 L130.4 255 L127.3 246.5 L124.2 237.9 L121.2 229.5 L117.4 220.9 L112.3 211.9 L106.5 202.5 L100.5 192.8 L94.7 183 L89.7 173.2 L85.9 163.5 L84 154.1 L84.4 145.1 L87.6 136.5 L94.5 128.1 L105.1 119.5 L118.5 111 L133.8 102.5 L150.1 94.4 L166.6 86.8 L182.4 79.8 L196.7 73.5 L208.4 68.2 L209.7 67.6" fill="none" stroke="#8b8378" stroke-width="1.5" stroke-dasharray="5 4"/>
+<path d="M216.8 64 L207 64.4 L210.6 71.7 Z" fill="#8b8378" stroke="none"/>
+<path d="M357.6 302 L359.1 297.8 L361.1 292.5 L363.3 286.2 L365.8 279.2 L368.6 271.6 L371.5 263.5 L374.6 255 L377.7 246.5 L380.8 237.9 L383.8 229.5 L387.6 220.9 L392.7 211.9 L398.5 202.5 L404.5 192.8 L410.3 183 L415.3 173.2 L419.1 163.5 L421 154.1 L420.6 145.1 L417.4 136.5 L410.5 128.1 L399.9 119.5 L386.5 111 L371.2 102.5 L354.9 94.4 L338.4 86.8 L322.6 79.8 L308.3 73.5 L296.6 68.2 L295.3 67.6" fill="none" stroke="#8b8378" stroke-width="1.5" stroke-dasharray="5 4"/>
+<path d="M288.2 64 L294.4 71.7 L298 64.4 Z" fill="#8b8378" stroke="none"/>
+<rect x="24" y="125.5" width="127.2" height="22" rx="3" fill="#fffdf8"/>
+<text x="87.6" y="140.7" font-size="12" fill="#2f2b26">sharper question</text>
+<rect x="353.8" y="125.5" width="127.2" height="22" rx="3" fill="#fffdf8"/>
+<text x="417.4" y="140.7" font-size="12" fill="#2f2b26">sharper question</text>
+<rect x="171" y="24" width="163" height="40" rx="20" fill="#fffdf8" stroke="#2f2b26" stroke-width="1.6"/>
+<text x="252.5" y="48.9" font-size="14" fill="#2f2b26">Ask a question</text>
+<rect x="172.8" y="116" width="159.4" height="41" rx="4" fill="#fffdf8" stroke="#2f2b26" stroke-width="1.6"/>
+<text x="252.5" y="141.4" font-size="14" fill="#2f2b26">Collect sources</text>
+<rect x="184" y="209" width="137" height="41" rx="10" fill="#fffdf8" stroke="#2f2b26" stroke-width="1.6"/>
+<text x="252.5" y="234.4" font-size="14" fill="#2f2b26">Write a note</text>
+<rect x="75.1" y="302" width="159.4" height="41" rx="4" fill="#fffdf8" stroke="#2f2b26" stroke-width="1.6"/>
+<text x="154.8" y="327.4" font-size="14" fill="#2f2b26">Sketch the idea</text>
+<rect x="270.5" y="302" width="159.4" height="41" rx="4" fill="#fffdf8" stroke="#2f2b26" stroke-width="1.6"/>
+<text x="350.2" y="327.4" font-size="14" fill="#2f2b26">Read the thread</text>
+</g>
+</svg>
